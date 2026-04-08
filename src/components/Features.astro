@@ -1,0 +1,49 @@
+---
+const features = [
+  {
+    title: 'Fast Performance',
+    description:
+      "Built with Astro's zero-JS-by-default architecture for lightning fast load times.",
+    icon: '⚡',
+  },
+  {
+    title: 'Tailwind Ready',
+    description:
+      'Fully styled with Tailwind CSS v4, the latest and greatest in utility-first CSS.',
+    icon: '🎨',
+  },
+  {
+    title: 'Easy Customization',
+    description:
+      'Easily adapt the components to your brand with simple Tailwind classes.',
+    icon: '🛠️',
+  },
+];
+---
+
+<section id="features" class="bg-slate-50 py-20">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">
+        Everything you need to ship
+      </h2>
+      <p class="mx-auto mt-4 max-w-2xl text-lg text-slate-600">
+        Focus on your message, we'll handle the infrastructure and styling.
+      </p>
+    </div>
+
+    <div class="mt-20 grid grid-cols-1 gap-12 md:grid-cols-3">
+      {
+        features.map((feature) => (
+          <div class="rounded-2xl border border-slate-100 bg-white p-8 shadow-sm transition-shadow hover:shadow-md">
+            <div class="mb-4 text-4xl">{feature.icon}</div>
+            <h3 class="mb-2 text-xl font-semibold text-slate-900">
+              {feature.title}
+            </h3>
+            <p class="leading-relaxed text-slate-600">{feature.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
