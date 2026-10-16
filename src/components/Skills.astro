@@ -1,0 +1,201 @@
+---
+const skillCategories = [
+  {
+    title: 'Frontend Development',
+    icon: 'frontend',
+    skills: [
+      'Vue.js (Vue 2 / Vue 3)',
+      'Composition API',
+      'Options API',
+      'Nuxt.js',
+      'React.js',
+      'Next.js',
+      'TypeScript',
+      'JavaScript (ES6+)',
+      'Pinia / Vuex',
+      'Vue Router',
+      'Tailwind CSS',
+      'SCSS / SASS',
+      'HTML5',
+      'PrimeVue',
+      'Vuetify',
+      'HeroUI',
+      'Vuelidate',
+      'Quill.js',
+      'Chart.js',
+      'FullCalendar',
+      'Matrix E2E',
+      'RTL & Localization (i18n)',
+    ],
+  },
+  {
+    title: 'AI & Developer Tools',
+    icon: 'ai',
+    skills: [
+      'AI-Assisted Coding (Copilot, ChatGPT, Claude)',
+      'Prompt Engineering for Development',
+      'LLM API Integration',
+      'Workflow & Productivity Automation',
+      'AI Code Review & Refactoring',
+      'Cursor / IDE AI Extensions',
+    ],
+  },
+  {
+    title: 'Backend & Infrastructure',
+    icon: 'backend',
+    skills: [
+      'PHP',
+      'Domain & DNS Configuration',
+      'REST APIs',
+      'Node.js',
+      'Web Hosting (Vercel, Railway, GitHub Pages)',
+    ],
+  },
+  {
+    title: 'Tools & Build Systems',
+    icon: 'tools',
+    skills: [
+      'Git / GitHub',
+      'Vite',
+      'Webpack',
+      'NPM / Yarn',
+      'Figma',
+      'Vue DevTools',
+    ],
+  },
+  {
+    title: 'Methodologies & Analytics',
+    icon: 'methodology',
+    skills: [
+      'Agile / Scrum',
+      'Sprint Planning',
+      'Zendesk',
+      'Amplitude Analytics',
+    ],
+  },
+];
+---
+
+<section
+  id="skills"
+  class="border-b border-slate-200/60 bg-slate-50 py-16 sm:py-24"
+>
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="text-xs font-bold tracking-wider text-blue-600 uppercase">
+        Expertise
+      </h2>
+      <p
+        class="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl"
+      >
+        Technical Skills & Tech Stack
+      </p>
+      <p class="mx-auto mt-3 max-w-2xl text-base text-slate-600 sm:text-lg">
+        Comprehensive toolkit refined through enterprise SPA engineering,
+        frontend performance tuning, and full-stack integrations.
+      </p>
+    </div>
+
+    <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+      {
+        skillCategories.map((category) => (
+          <div class="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:border-blue-200 hover:shadow-md">
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
+              <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 font-bold text-blue-600">
+                {category.icon === 'frontend' && (
+                  <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                    />
+                  </svg>
+                )}
+                {category.icon === 'ai' && (
+                  <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
+                  </svg>
+                )}
+                {category.icon === 'backend' && (
+                  <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"
+                    />
+                  </svg>
+                )}
+                {category.icon === 'tools' && (
+                  <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                )}
+                {category.icon === 'methodology' && (
+                  <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                    />
+                  </svg>
+                )}
+              </div>
+              <h3 class="text-lg font-bold text-slate-900">{category.title}</h3>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-2">
+              {category.skills.map((skill) => (
+                <span class="inline-flex items-center rounded-lg bg-slate-100 px-3 py-1.5 text-xs font-semibold text-slate-700 transition-colors hover:bg-blue-50 hover:text-blue-700">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

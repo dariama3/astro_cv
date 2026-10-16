@@ -1,0 +1,113 @@
+---
+const experiences = [
+  {
+    role: 'Full Stack Developer (Vue / PHP)',
+    company: 'NDA',
+    location: '',
+    period: 'May 2026 – Present',
+    current: true,
+    highlights: [
+      'Developed scalable frontend application components using Vue.js integrated with PHP backend logic.',
+      'Employed AI-assisted development workflows (GitHub Copilot, LLM prompt engineering) to accelerate feature delivery, automate boilerplate generation, and streamline debugging.',
+      'Configured custom domain routing, DNS settings, and web hosting environments to ensure reliable web deployment.',
+      'Optimized build workflows and local development pipelines using Vite.',
+    ],
+    tech: ['Vue.js', 'PHP', 'AI Workflows', 'DNS/Domain Setup', 'Vite', 'Web Hosting'],
+  },
+  {
+    role: 'Frontend Developer (Vue / Nuxt)',
+    company: 'SoftPeak',
+    location: 'Remote',
+    period: 'Sep 2024 – Mar 2026',
+    current: false,
+    highlights: [
+      'Engineered a large-scale enterprise security awareness SPA using Vue 3, TypeScript, and Nuxt, featuring phishing campaign management, visual template editing (Quill.js), and analytics dashboards (Chart.js, FullCalendar).',
+      'Built a production enterprise collaboration platform in Vue 3 and TypeScript featuring encrypted real-time messaging (Matrix E2E), role-based access control (RBAC), and Kanban task management with drag-and-drop functionality.',
+      'Implemented full bilingual and right-to-left (RTL/Localization) support across complex UI modules for international deployment (EN/AR).',
+      'Leveraged AI-driven coding assistants and automated refactoring techniques to maintain high code standards and reduce cycle times.',
+    ],
+    tech: ['Vue 3', 'Nuxt.js', 'TypeScript', 'AI Tooling', 'Matrix E2E', 'RBAC', 'Quill.js', 'Chart.js', 'FullCalendar', 'RTL / i18n'],
+  },
+  {
+    role: 'Frontend Developer',
+    company: 'Litauris LTD',
+    location: '',
+    period: 'Feb 2023 – Sep 2024',
+    current: false,
+    highlights: [
+      'Engineered a high-performance responsive landing page using Vue 3 (Composition API) and Tailwind CSS.',
+      'Integrated PrimeVue UI components and managed global application state using Pinia.',
+      'Implemented client-side input handling and dynamic validation rules using Vuelidate.',
+      'Streamlined frontend development workflows using Vite and collaborated directly with UI/UX designers via Figma.',
+    ],
+    tech: ['Vue 3 (Composition API)', 'Tailwind CSS', 'PrimeVue', 'Pinia', 'Vuelidate', 'Vite', 'Figma'],
+  },
+];
+---
+
+<section id="experience" class="border-b border-slate-200/60 bg-white py-16 sm:py-24">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="text-xs font-bold uppercase tracking-wider text-blue-600">Career History</h2>
+      <p class="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+        Professional Experience
+      </p>
+      <p class="mx-auto mt-3 max-w-2xl text-base text-slate-600 sm:text-lg">
+        Demonstrated track record of delivering complex web applications, modern architectures, and collaborative engineering.
+      </p>
+    </div>
+
+    <div class="relative mt-12 space-y-8 before:absolute before:inset-0 before:left-8 before:h-full before:w-0.5 before:bg-slate-200 md:before:left-1/2 md:before:-translate-x-1/2">
+      {
+        experiences.map((exp, index) => {
+          const isEven = index % 2 === 0;
+          return (
+            <div class={`relative flex flex-col md:flex-row items-start ${isEven ? 'md:flex-row-reverse' : ''}`}>
+              <!-- Timeline node circle -->
+              <div class="absolute left-8 -translate-x-1/2 md:left-1/2 flex h-8 w-8 items-center justify-center rounded-full border-4 border-white bg-blue-600 shadow-md">
+                <div class="h-2 w-2 rounded-full bg-white"></div>
+              </div>
+
+              <!-- Content card -->
+              <div class="ml-16 md:ml-0 md:w-1/2 md:px-8 w-full">
+                <div class="rounded-2xl border border-slate-200 bg-slate-50/60 p-6 shadow-sm transition-all hover:border-blue-200 hover:bg-white hover:shadow-md">
+                  <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200/80 pb-3">
+                    <div>
+                      <h3 class="text-lg font-bold text-slate-900">{exp.role}</h3>
+                      <div class="text-sm font-semibold text-blue-600">
+                        {exp.company} {exp.location ? `(${exp.location})` : ''}
+                      </div>
+                    </div>
+                    <div class="inline-flex items-center gap-1.5 rounded-full bg-slate-200/70 px-3 py-1 text-xs font-medium text-slate-700">
+                      {exp.current && (
+                        <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                      )}
+                      {exp.period}
+                    </div>
+                  </div>
+
+                  <ul class="mt-4 space-y-2 text-sm text-slate-600">
+                    {exp.highlights.map((point) => (
+                      <li class="flex items-start gap-2 leading-relaxed">
+                        <span class="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-500"></span>
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div class="mt-5 flex flex-wrap gap-1.5 pt-3 border-t border-slate-100">
+                    {exp.tech.map((t) => (
+                      <span class="rounded bg-white border border-slate-200 px-2 py-0.5 text-[11px] font-medium text-slate-600">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

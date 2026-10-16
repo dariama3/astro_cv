@@ -1,40 +1,76 @@
 ---
 const links = [
-  { href: '#', label: 'Home' },
-  { href: '#features', label: 'Features' },
-  { href: '#pricing', label: 'Pricing' },
   { href: '#about', label: 'About' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#education', label: 'Education & Certifications' },
+  { href: '#contact', label: 'Contact' },
 ];
 ---
 
-<nav class="border-b border-slate-200 bg-white">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<header
+  class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-md"
+>
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
-      <div class="flex flex-shrink-0 items-center">
+      <a href="#" class="group flex items-center gap-2">
         <span
-          class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-2xl font-bold text-transparent"
-          >Brand</span
+          class="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-600 font-bold text-white shadow-sm transition-transform group-hover:scale-105"
         >
-      </div>
-      <div class="hidden md:block">
-        <div class="ml-10 flex items-baseline space-x-4">
-          {
-            links.map((link) => (
-              <a
-                href={link.href}
-                class="rounded-md px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-blue-600"
-              >
-                {link.label}
-              </a>
-            ))
-          }
-          <a
-            href="#"
-            class="rounded-full bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
-            >Get Started</a
+          DM
+        </span>
+        <div class="flex flex-col">
+          <span class="text-base leading-tight font-bold text-slate-900"
+            >Daria Malenko</span
+          >
+          <span class="text-xs leading-none font-medium text-slate-500"
+            >Frontend & Full Stack Dev</span
           >
         </div>
+      </a>
+
+      <nav class="hidden items-center space-x-1 md:flex lg:space-x-2">
+        {
+          links.map((link) => (
+            <a
+              href={link.href}
+              class="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-blue-600"
+            >
+              {link.label}
+            </a>
+          ))
+        }
+        <a
+          href="mailto:maridariama3@gmail.com"
+          class="ml-3 inline-flex items-center gap-1.5 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition-all hover:bg-blue-700 hover:shadow-md"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+            ></path>
+          </svg>
+          Get in Touch
+        </a>
+      </nav>
+
+      <!-- Mobile Contact Button -->
+      <div class="flex md:hidden">
+        <a
+          href="mailto:maridariama3@gmail.com"
+          class="rounded-lg bg-blue-600 px-3 py-1.5 text-xs font-semibold text-white shadow-sm"
+        >
+          Contact
+        </a>
       </div>
     </div>
   </div>
-</nav>
+</header>
